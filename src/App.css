@@ -88,9 +88,27 @@ p { font-size: 20px; }
 
 .featured {
   display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
+  /* align-content: left; */
   max-height: 60vh;
+}
+.featured li {
+  text-align: left;
+  font-size: 28px;
+}
+
+.featured .truth1, .truth2 {
+  color: greenyellow;
+}
+
+.featured .lie {
+  color: red;
+}
+
+.featured button {
+  width: 40vw;
+  height: 50%;
 }
 
 #total {

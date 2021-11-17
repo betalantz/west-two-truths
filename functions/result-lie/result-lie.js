@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   try {
     console.log('Setting result')
     const { result, id } = JSON.parse(event.body)
-    const updated = { correctName: result }
+    const updated = { correctLie: result }
     const req = await fauna.query(q.Update(q.Ref(`classes/submissions/${id}`), {data: updated}))
 
     const reqUpdated = await fauna.query(q.Map(q.Paginate(q.Match(q.Index("all_submissions"))), q.Lambda("attr", q.Get(q.Var("attr")))))
