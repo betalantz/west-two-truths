@@ -6,3 +6,6 @@ Free game for the many improvements to be made. Also, see license.
 
 # License
 [DBAD](https://dbad-license.org/) 
+
+Incidunt repellat in voluptatem est in unde. Quia quasi architecto culpa fugit et cum reiciendis.
+Vel omnis repudiandae quia ipsum. Alias dolore ut aut ipsam molestias dolores et omnis. Ut distinctio nisi.
