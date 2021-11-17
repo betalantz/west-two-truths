@@ -17,7 +17,7 @@ export default function Overview() {
         <div id="overview">
             { ov ? 
                 <><p>Out of {ov.total} submissions, {ov.totalRemaining} are yet to be guessed!</p>
-                <p>Out of {ov.totalShown} guesses, we've got {ov.totalCorrect} correct!</p></>
+                <p>Out of {ov.totalShown} guesses, we've got {ov.totalCorrectNames} names, and {ov.totalCorrectLies} lies correct!</p></>
             : "Loading..." 
             }
 

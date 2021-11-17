@@ -54,10 +54,10 @@ export default function Play() {
            { loading ?
             <p>Loading . . .</p>
            :
-            <><div id="featured" className={featured.length > 1 ? 'multi' : 'one'}>
+            <div id="featured" className={featured.length > 1 ? 'multi' : 'one'}>
                 {showFeatured()}
+                {showTotals()}
             </div>
-            {showTotals()}</>
            }
         </div>
     )

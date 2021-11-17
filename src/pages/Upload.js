@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 
 export default function Upload() {
     const [uploadStatus, setUploadStatus] = useState(false)
-    // const [file, setFile] = useState("")
-    // const [name, setName] = useState("")
     const [formData, setFormData] = useState({
         name: '',
         truth1: '',
@@ -11,35 +9,11 @@ export default function Upload() {
         lie: ''
     })
 
-    /*
-    questionSet = {
-        name: 'Bill',
-        truth1: 'a',
-        truth2: 'b',
-        lie: 'c',
-        shown: true
-    }
-    let diplayOrder = ['truth1', 'truth2', 'lie']
-    let shuffleArray = array => {
-        for (let i = array.length -1; i > 0; i--){
-            const j = Math.floor(Math.random() * (i+1))
-            const temp = array[i]
-            array[i] = array[j]
-            array[j] = temp
-        }
-    }
-    shuffleArray(displayOrder)
-    const sentences = displayOrder.map(order => <Sentence text={questionSet[order]} className={order} reveal={reveal}/>)
-    */
 
     const handleChange = e => setFormData({
         ...formData,
         [e.target.name]: e.target.value
     })
-
-    // const storeFileLocally = e => setFile(e.target.files[0])
-
-    // const handleNameChange = e => setName(e.target.value)
 
     const handleSubmit = async () => {
         setUploadStatus('Submitting...')
@@ -51,33 +25,7 @@ export default function Upload() {
         const dbData = await dbresp.json()
         dbData.message ? setSuccess() : console.error('Something went wrong...')
     }
-    // const handleUploadClick = async () => {
-    //     setUploadStatus('Uploading . . .')
-    //     const imageData = new FormData()
-    //     imageData.append('upload_preset', 'stand-app')
-    //     imageData.append('file', file)
-
-    //     // 1. store the image on eg. Cloudinary, get the link 
-    //     console.log('Storing image')
-    //     const resp = await fetch('https://api.cloudinary.com/v1_1/dv6zt4gxq/image/upload', {
-    //         method: 'POST',
-    //         body: imageData
-    //     })
-    //     const { error, url } = await resp.json()
-    //     if(error){return}
-
-    //     const imageUrl = url
-
-    //     // // 2. send the image link and user's name to our storage
-    //     console.log('Saving submission')
-    //     const submissionData = { imageUrl, name }
-    //     const dbresp = await fetch('/api/upload', {
-    //         method: 'POST',
-    //         body: JSON.stringify(submissionData)
-    //     })
-    //     const dbdata = await dbresp.json()
-    //     dbdata.message ? setSuccess() : console.error('Something went wrong....')    
-    // }
+   
 
     const setSuccess = () => {
         setUploadStatus('Submit successful!')
@@ -112,6 +60,16 @@ export default function Upload() {
     }
 
     return (
+        <>
+        <div id="example">
+            <p>Example:</p>
+            <ul>
+                <li style={{color: "greenyellow"}}>I have been ice fishing.</li>
+                <li style={{color: "greenyellow"}}>Once I chatted with Cher in an airport.</li>
+                <li style={{color: "red"}}>I have never seen a movie made in the 20th century.</li>
+            </ul>
+
+        </div>
         <div id="upload">
             {
                 uploadStatus ? 
@@ -123,5 +81,6 @@ export default function Upload() {
             }
             
         </div>
+        </>
     )
 }

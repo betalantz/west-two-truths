@@ -74,6 +74,22 @@ p { font-size: 20px; }
   align-content: center;
 }
 
+#example {
+  width: 90%;
+  margin: 5%;
+  position: fixed;
+  top: 35px;
+  height: 30vh;
+  /* display: grid; */
+  /* justify-content: center; */
+  /* align-content: center; */
+}
+#example li {
+  font-size: 28px;
+  text-align: left;
+  margin-left: 35%;
+}
+
 #featured {
   display: grid;
   justify-content: center;
@@ -108,15 +124,24 @@ p { font-size: 20px; }
 
 .featured button {
   width: 40vw;
-  height: 50%;
+  height: 40%;
 }
 
-#total {
+/* .result { 
+  display: flex;
+  align-content: flex-end;
+} */
+/* #total {
+  display: flex;
+  align-content: flex-end;
+
+} */
+/* #total {
   position: absolute;
   left: 50%;
   bottom: 0%;
   transform: translate(-50%, -50%);
-}
+} */
 
 input, button, #file-upload-button {
   font-family: monospace;
@@ -139,7 +164,10 @@ input, button {
   transform: translate(-50%, -50%);
 }
 
-.result button { width: 40%; }
+.result button { 
+  width: 40%;
+  height: 40%;
+ }
 
 #file-upload-button { margin: 0 auto; }
 

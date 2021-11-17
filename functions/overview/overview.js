@@ -13,13 +13,15 @@ exports.handler = async (event, context) => {
 
     const allSubmissions = req.data
     const shown = allSubmissions.filter(s => !!s.data.shown)
-    const correct = shown.filter(s => !!s.data.correct)
+    const correctNames = shown.filter(s => !!s.data.correctName)
+    const correctLies = shown.filter(s => !!s.data.correctLie)
     const remaining = allSubmissions.length - shown.length
 
     const overview = {
       total: allSubmissions.length,
       totalRemaining: remaining,
-      totalCorrect: correct.length,
+      totalCorrectNames: correctNames.length,
+      totalCorrectLies: correctLies.length,
       totalShown: shown.length
     }
 
