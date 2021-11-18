@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <header><NavLink to="/"><h1>Two Truths & A Lie</h1></NavLink></header>
         <nav>
-          <NavLink className="nav-link" activeClassName="current-page" to="/upload">Upload</NavLink>
+          <NavLink className="nav-link" activeClassName="current-page" to="/upload">Submit</NavLink>
           <NavLink className="nav-link" activeClassName="current-page" to="/play">Play</NavLink>
         </nav>
         <Switch>
